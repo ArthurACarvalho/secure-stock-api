@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -36,7 +37,16 @@ public class ProductController {
     ResponseEntity<ProductModel> findById(@PathVariable long id) {
         return productRepository.findById(id)
                 .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+    }
+
+    @GetMapping("/{nome}")
+    ResponseEntity<Object> findByName(@PathVariable String nome) {
+        Optional<ProductModel> product = productRepository.findByNome(nome);
+        if (product.isEmpty()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(product.get());
     }
 
 }
