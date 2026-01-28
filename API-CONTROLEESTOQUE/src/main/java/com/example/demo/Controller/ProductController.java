@@ -3,6 +3,7 @@ package com.example.demo.Controller;
 import com.example.demo.Dto.ProductDto;
 import com.example.demo.Model.ProductModel;
 import com.example.demo.Repository.ProductRepository;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,5 +63,13 @@ public class ProductController {
         productModel.setId(id);
 
         return ResponseEntity.ok(productRepository.save(productModel));
+    }
+
+    @Transactional
+    @DeleteMapping("/{id}")
+    ResponseEntity<ProductModel> delete(@PathVariable long id) {
+        productRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
+        
     }
 }
