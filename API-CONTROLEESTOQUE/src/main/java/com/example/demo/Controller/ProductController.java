@@ -31,4 +31,12 @@ public class ProductController {
     ResponseEntity<List<ProductModel>> findAll() {
         return ResponseEntity.ok(productRepository.findAll());
     }
+
+    @GetMapping("/{id}")
+    ResponseEntity<ProductModel> findById(@PathVariable long id) {
+        return productRepository.findById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
 }
