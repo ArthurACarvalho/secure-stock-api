@@ -1,21 +1,27 @@
-body{
-    background-color: rgb(70, 142, 236);
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
     font: normal 15pt Arial;
+
 }
 
+
 header{
+    background-color: #1e293b;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2em;
     text-transform: uppercase;
-    margin: 60px;
     text-align: center;
+    padding: 60px;
     color: white;
     font-weight: bold;
 }
 
 #p1{
     background-color: #f4f6f8;
-    border-left: 5px solid #4a90e2;
+    border-left: 5px solid #1e293b;
     padding: 50px;
     border-radius: 10px;
     text-align: justify;
@@ -70,6 +76,8 @@ header{
 }
 
 footer{
+    padding: 20px;
+    background-color: #1e293b;
     text-align: center;
     color: white;
     font-style: italic;
