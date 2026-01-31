@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/get.css">
+    <title>Lista de produtos</title>
 </head>
 <body>
-    
+    <header>
+        <a href="index.html"><input type="button" value="Voltar" id="btn"></a>
+        <h1>Produtos em estoque</h1>
+    </header>
+
+    <div class="container">
+        <table id="tbprodutos">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody id="produtotbody">
+
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+    <p>&copy; Arthur Américo Carvalho</p>
+  </footer>
+  <script src="../JS/getProduct.js"></script>
 </body>
 </html>
