@@ -23,6 +23,9 @@ function carregarProdutos() {
                     <td>${produto.quantidade}</td>
                     <td>R$ ${produto.preco.toFixed(2)}</td>
                     <td>
+                        <button class="acao-btn editar" onclick="irParaEdicao(${produto.id})">
+                            Editar
+                        </button>
                         <button class="acao-btn excluir" onclick="excluirProduto(${produto.id})">
                             Excluir
                         </button>
@@ -55,6 +58,11 @@ function excluirProduto(id) {
         console.error(error);
         alert("Erro ao excluir produto");
     });
+}
+
+
+function irParaEdicao(id) {
+    window.location.href = `edit.html?id=${id}`;
 }
 
 

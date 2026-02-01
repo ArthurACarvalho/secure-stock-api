@@ -94,6 +94,15 @@ tbody tr:hover {
     background-color: #dc2626;
 }
 
+.editar {
+    background-color: #facc15;
+    color: #000;
+}
+
+.editar:hover {
+    background-color: #eab308;
+}
+
 footer {
     background-color: #1e293b;
     color: #ffffff;
