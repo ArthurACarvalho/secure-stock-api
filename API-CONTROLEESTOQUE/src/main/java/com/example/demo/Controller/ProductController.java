@@ -40,15 +40,7 @@ public class ProductController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
-
-    @GetMapping("/nome/{nome}")
-    ResponseEntity<Object> findByName(@PathVariable String nome) {
-        Optional<ProductModel> product = productRepository.findByNome(nome);
-        if (product.isEmpty()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
-        return ResponseEntity.status(HttpStatus.OK).body(product.get());
-    }
+    
 
     @PutMapping("/{id}")
     ResponseEntity<ProductModel> update(@PathVariable long id, @RequestBody @Valid ProductDto productDto) {

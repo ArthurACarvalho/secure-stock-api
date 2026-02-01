@@ -7,7 +7,6 @@ import javax.swing.text.html.Option;
 import java.util.Optional;
 
 public interface ProductRepository extends JpaRepository<ProductModel,Integer> {
-    Optional<ProductModel> findByNome(String nome);
     Optional<ProductModel> findById(Long id);
     Optional<ProductModel> deleteById(Long id);
 }
