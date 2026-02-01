@@ -77,6 +77,23 @@ tbody tr:hover {
     background-color: #e2e8f0;
 }
 
+.acao-btn {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.excluir {
+    background-color: #ef4444;
+    color: #fff;
+}
+
+.excluir:hover {
+    background-color: #dc2626;
+}
+
 footer {
     background-color: #1e293b;
     color: #ffffff;

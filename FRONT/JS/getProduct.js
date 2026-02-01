@@ -22,6 +22,11 @@ function carregarProdutos() {
                     <td>${produto.descricao}</td>
                     <td>${produto.quantidade}</td>
                     <td>R$ ${produto.preco.toFixed(2)}</td>
+                    <td>
+                        <button class="acao-btn excluir" onclick="excluirProduto(${produto.id})">
+                            Excluir
+                        </button>
+                    </td>
                     `;
 
                 tbody.appendChild(tr);
@@ -31,6 +36,25 @@ function carregarProdutos() {
             console.error(error);
             alert("Erro ao carregar produtos");
         });
+}
+
+function excluirProduto(id) {
+    const confirmacao = confirm("Tem certeza que deseja excluir este produto?");
+    if (!confirmacao) return;
+
+    fetch(`${API_URL}/${id}`, {
+        method: "DELETE"
+    })
+    .then(response => {
+        if (response.status !== 204) {
+            throw new Error("Erro ao excluir produto");
+        }
+        carregarProdutos(); // atualiza a tabela
+    })
+    .catch(error => {
+        console.error(error);
+        alert("Erro ao excluir produto");
+    });
 }
 
 
