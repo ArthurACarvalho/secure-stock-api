@@ -7,6 +7,14 @@
 
 }
 
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
 
 header{
     background-color: #1e293b;
@@ -30,6 +38,7 @@ header{
 }
 
 .container{
+    flex: 1;
     justify-content: center;
     background-color: white;
     padding: 40px;
