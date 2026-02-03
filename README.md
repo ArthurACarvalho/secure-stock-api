@@ -53,9 +53,9 @@ Registro de saída de produtos
 - **Spring Boot Starter Web MVC Test**  
   Fornece ferramentas para testes de controllers e endpoints REST.
 
-- O gerenciamento de dependências é feito com **Maven**.
+O gerenciamento de dependências é feito com **Maven**.
   
-- As dependências seguem as boas práticas recomendadas pelo ecossistema Spring Boot.
+As dependências seguem as boas práticas recomendadas pelo ecossistema Spring Boot.
 
 ### Front-end
 - HTML  
