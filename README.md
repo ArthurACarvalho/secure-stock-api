@@ -106,13 +106,32 @@ cd API-ControledeEstoque
 mvn spring-boot:run
 A aplicação será iniciada em:
 http://localhost:8080
+```
 
 Configuração do Banco de Dados
 No arquivo application.properties, configure as credenciais do MySQL:
 
+```bash
 spring.datasource.url=jdbc:mysql://localhost:3306/controle_estoque
 spring.datasource.username=seu_usuario
 spring.datasource.password=sua_senha
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
+```
+
+###Aprendizados
+
+Com este projeto foi possível praticar:
+
+Desenvolvimento de APIs REST com Spring Boot
+
+Persistência de dados com JPA e Hibernate
+
+Validação de dados no backend
+
+Integração com banco de dados relacional
+
+Organização de código em camadas
+
+Versionamento com Git e GitHub
