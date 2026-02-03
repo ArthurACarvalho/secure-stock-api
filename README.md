@@ -65,9 +65,6 @@ O projeto segue uma arquitetura baseada em camadas:
 - Controller  
   Responsável por receber e responder às requisições HTTP.
 
-- Service  
-  Contém as regras de negócio da aplicação.
-
 - Repository  
   Camada de acesso aos dados utilizando Spring Data JPA.
 
