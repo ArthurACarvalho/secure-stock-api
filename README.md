@@ -119,8 +119,8 @@ spring.datasource.password=sua_senha
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 ```
-
-###Aprendizados
+---
+Aprendizados
 
 Com este projeto foi possível praticar:
 
