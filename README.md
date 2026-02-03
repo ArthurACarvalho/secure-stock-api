@@ -122,16 +122,21 @@ spring.jpa.show-sql=true
 ---
 ### Aprendizados
 
-Com este projeto foi possível praticar:
+- Com este projeto foi possível praticar:
 
-Desenvolvimento de APIs REST com Spring Boot
+- Desenvolvimento de APIs REST com Spring Boot
 
-Persistência de dados com JPA e Hibernate
+- Persistência de dados com JPA e Hibernate
 
-Validação de dados no backend
+- Validação de dados no backend
 
-Integração com banco de dados relacional
+- Integração com banco de dados relacional
 
-Organização de código em camadas
+- Organização de código em camadas
 
-Versionamento com Git e GitHub
+- Versionamento com Git e GitHub
+---
+
+## Autor
+
+Arthur A. Carvalho
