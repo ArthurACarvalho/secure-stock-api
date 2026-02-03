@@ -1,4 +1,4 @@
-# API de Controle de Estoque
+# 📦 API de Controle de Estoque
 
 API REST desenvolvida em Java com Spring Boot para gerenciamento de produtos e controle de estoque.  
 O sistema permite cadastrar, listar, atualizar e remover produtos, simulando um cenário real de aplicação empresarial.
@@ -20,7 +20,7 @@ Este projeto foi desenvolvido com foco em aprendizado prático, boas práticas d
 
 ---
 
-## Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 ### Backend
 - Java 21  
@@ -78,7 +78,7 @@ Essa separação facilita a manutenção, os testes e a escalabilidade da aplica
 
 ---
 
-## Endpoints Principais
+## 📌 Endpoints Principais
 
 | Método | Endpoint         | Descrição                      |
 |------|------------------|--------------------------------|
