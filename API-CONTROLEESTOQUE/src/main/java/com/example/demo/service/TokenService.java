@@ -14,28 +14,28 @@ import java.time.ZoneOffset;
 
 @Service
 public class TokenService {
-
     @Value("${api.security.token.secret}")
     private String secret;
 
-    public String generateToken(Users user) {
+    public String generateToken(Users user){
         try{
             Algorithm algorithm = Algorithm.HMAC256(secret);
-            return JWT.create()
-                    .withIssuer("API-CONTROLEESTOQUE")
+            String token = JWT.create()
+                    .withIssuer("auth-api")
                     .withSubject(user.getLogin())
                     .withExpiresAt(genExpirationDate())
                     .sign(algorithm);
-        }catch (JWTCreationException exception) {
-            throw new RuntimeException("[ERROR] While generatin token!", exception);
+            return token;
+        } catch (JWTCreationException exception) {
+            throw new RuntimeException("Error while generating token", exception);
         }
     }
 
     public String validateToken(String token){
-        try{
+        try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             return JWT.require(algorithm)
-                    .withIssuer("API-CONTROLEESTOQUE")
+                    .withIssuer("estoque-api")
                     .build()
                     .verify(token)
                     .getSubject();

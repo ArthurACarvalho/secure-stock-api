@@ -18,38 +18,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("auth")
 public class AuthenticationController {
-
     @Autowired
     private AuthenticationManager authenticationManager;
-
     @Autowired
-    private UserRepository userRepository;
-
+    private UserRepository repository;
     @Autowired
     private TokenService tokenService;
 
     @PostMapping("/login")
-    public ResponseEntity login(@RequestBody @Valid AuthenticationDTO authenticationDTO) {
-        var usernamePassword = new UsernamePasswordAuthenticationToken(authenticationDTO.login(),  authenticationDTO.password());
+    public ResponseEntity login(@RequestBody @Valid AuthenticationDTO data){
+        var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
 
-        var token = tokenService.generateToken((Users)auth.getPrincipal());
+        var token = tokenService.generateToken((Users) auth.getPrincipal());
 
         return ResponseEntity.ok(new LoginResponseDTO(token));
     }
 
     @PostMapping("/register")
-    public ResponseEntity register(@RequestBody @Valid RegisterDTO  registerDTO) {
-        if(userRepository.findByLogin(registerDTO.login())!=null) return ResponseEntity.badRequest().build();
+    public ResponseEntity register(@RequestBody @Valid RegisterDTO data){
+        if(this.repository.findByLogin(data.login()) != null) return ResponseEntity.badRequest().build();
 
-        String encryptedPassword = new BCryptPasswordEncoder().encode(registerDTO.password());
-        Users newUser = new Users(registerDTO.login(), encryptedPassword, registerDTO.role());
+        String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
+        Users newUser = new Users(data.login(), encryptedPassword, data.role());
 
-        this.userRepository.save(newUser);
+        this.repository.save(newUser);
 
         return ResponseEntity.ok().build();
     }
-
 }
