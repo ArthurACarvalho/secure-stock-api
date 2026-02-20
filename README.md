@@ -1,139 +1,160 @@
-# 📦 API de Controle de Estoque
+# Secure Stock API 🛡️📦
 
-API REST desenvolvida em Java com Spring Boot para gerenciamento de produtos e controle de estoque.  
-O sistema permite cadastrar, listar, atualizar e remover produtos, simulando um cenário real de aplicação empresarial.
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/spring--boot-%236DB33F.svg?style=for-the-badge&logo=springboot)
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql)
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=json%20web%20tokens)
 
-Este projeto foi desenvolvido com foco em aprendizado prático, boas práticas de desenvolvimento backend e construção de portfólio para estágio em Análise e Desenvolvimento de Sistemas.
-
----
-
-## Funcionalidades
-
-- Cadastro de produtos
-- Listagem de produtos
-- Busca de produto por ID
-- Atualização de dados do produto
-- Remoção de produtos
-- Controle de quantidade em estoque
-- Validação de dados de entrada
-- Integração com banco de dados MySQL
+> API REST completa para **controle seguro de estoque**, com endpoints para cadastro, edição, listagem e remoção de produtos — implementada com **Java e Spring Boot**.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 📌 Sumário
 
-### Backend
-- Java 21  
+- [Sobre o Projeto](#-sobre-o-projeto)  
+- [Funcionalidades](#-funcionalidades)  
+- [Tecnologias Utilizadas](#-tecnologias-utilizadas)  
+- [Endpoints Principais](#-endpoints-principais)  
+- [Como Rodar](#-como-rodar)  
+- [Configurações de Banco de Dados](#-configurações-de-banco-de-dados)  
+- [Aprendizados](#-aprendizados)  
+- [Contribuição](#-contribuição)  
+- [Licença](#-licença)
+
+---
+
+## 📖 Sobre o Projeto
+
+Secure Stock API é uma **API RESTful** desenvolvida para gerenciar produtos e controlar estoques de maneira segura e eficiente. Ela foi criada com foco em boas práticas de desenvolvimento backend e pode ser usada como base para projetos profissionais ou portfólio.
+
+---
+
+## 🚀 Funcionalidades
+
+- 🔹 Cadastro de produtos  
+- 🔹 Listagem geral de produtos  
+- 🔹 Busca de produto por ID  
+- 🔹 Atualização de produto existente  
+- 🔹 Remoção de produto  
+- 🔹 Validação de entrada de dados  
+- 🔹 Controle de quantidade em estoque  
+- 🔹 Integração com banco de dados MySQL  
+
+---
+
+## 🛠 Tecnologias Utilizadas
+
+### 🧠 Backend
+
+- Java  
 - Spring Boot  
 - Spring Web MVC  
 - Spring Data JPA  
-- Hibernate  
-- Bean Validation  
 
-### Banco de Dados
+### 💾 Banco de Dados
+
 - MySQL  
 
-### Ferramentas
+### 📦 Ferramentas
+
 - Maven  
 - Lombok  
-- Spring Boot DevTools  
-- Git e GitHub  
 - Postman  
+- Git & GitHub  
 
 ---
 
-## Dependências Principais
+## 📍 Endpoints Principais
 
-- spring-boot-starter-webmvc – Criação de APIs REST
-- spring-boot-starter-data-jpa – Persistência de dados com JPA e Hibernate
-- spring-boot-starter-validation – Validação de dados com Bean Validation
-- mysql-connector-j – Conexão com banco de dados MySQL
-- lombok – Redução de código boilerplate
-- spring-boot-devtools – Ferramentas para desenvolvimento
-
-### Dependências de Teste
-- spring-boot-starter-data-jpa-test
-- spring-boot-starter-validation-test
-- spring-boot-starter-webmvc-test
+| Método | Endpoint             | Descrição                       |
+|--------|----------------------|---------------------------------|
+| GET    | `/produtos`          | Lista todos os produtos         |
+| GET    | `/produtos/{id}`     | Busca produto por ID            |
+| POST   | `/produtos`          | Cadastra novo produto           |
+| PUT    | `/produtos/{id}`     | Atualiza produto existente      |
+| DELETE | `/produtos/{id}`     | Remove produto                  |
 
 ---
 
-## Arquitetura do Projeto
+## ⚙️ Como Rodar
 
-O projeto segue uma arquitetura baseada em camadas:
+### 📋 Pré-requisitos
 
-- Controller  
-  Responsável por receber e responder às requisições HTTP.
+Antes de tudo, instale:
 
-- Repository  
-  Camada de acesso aos dados utilizando Spring Data JPA.
-
-- Model (Entity)  
-  Representa as entidades persistidas no banco de dados.
-
-Essa separação facilita a manutenção, os testes e a escalabilidade da aplicação.
+- ✔️ Java 21 ou superior  
+- ✔️ MySQL  
+- ✔️ Maven  
+- ✔️ Git  
 
 ---
 
-## 📌 Endpoints Principais
-
-| Método | Endpoint         | Descrição                      |
-|------|------------------|--------------------------------|
-| GET  | /produtos        | Lista todos os produtos        |
-| GET  | /produtos/{id}   | Busca produto por ID           |
-| POST | /produtos        | Cadastra um novo produto       |
-| PUT  | /produtos/{id}   | Atualiza um produto existente |
-| DELETE | /produtos/{id} | Remove um produto              |
-
----
-
-## Como Executar o Projeto
-
-### Pré-requisitos
-- Java 21 ou superior
-- Maven
-- MySQL
-- Git
-
-### Passo a passo
+### ▶️ Passo a passo
 
 ```bash
-git clone https://github.com/ArthurACarvalho/API-ControledeEstoque.git
-cd API-ControledeEstoque
-mvn spring-boot:run
-A aplicação será iniciada em:
-http://localhost:8080
-```
+# Clone o repositório
+git clone https://github.com/ArthurACarvalho/secure-stock-api.git
 
-Configuração do Banco de Dados
+# Entre na pasta
+cd secure-stock-api
+
+# Execute a aplicação
+mvn spring-boot:run
+
+A API será iniciada em:
+
+http://localhost:8080
+🗄️ Configurações de Banco de Dados
+
 No arquivo application.properties, configure as credenciais do MySQL:
 
-```bash
-spring.datasource.url=jdbc:mysql://localhost:3306/controle_estoque
+spring.datasource.url=jdbc:mysql://localhost:3306/seu_banco_de_dados
 spring.datasource.username=seu_usuario
 spring.datasource.password=sua_senha
-
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
-```
----
-### Aprendizados
+📚 Aprendizados
 
-- Com este projeto foi possível praticar:
+Com este projeto, você poderá demonstrar:
 
-- Desenvolvimento de APIs REST com Spring Boot
+Desenvolvimento de APIs REST com Java e Spring Boot
 
-- Persistência de dados com JPA e Hibernate
+Persistência de dados com JPA e MySQL
 
-- Validação de dados no backend
+Validação de dados no backend
 
-- Integração com banco de dados relacional
+Organização de código limpo
 
-- Organização de código em camadas
+Uso de Git & GitHub como fluxo de trabalho
 
-- Versionamento com Git e GitHub
----
+Testes de API com Postman
 
-## Autor
+🤝 Contribuição
 
-Arthur A. Carvalho
+Contribuições são muito bem-vindas!
+
+Se quiser contribuir:
+
+Faça um fork do projeto
+
+Crie uma branch (feature/minha-feature)
+
+Faça commit das suas alterações
+
+Envie um Pull Request
+
+Sugestões de melhorias:
+
+✨ Novas funcionalidades
+
+🐛 Correções de bugs
+
+📈 Melhorias de performance
+
+📄 Melhorias na documentação
+
+📄 Licença
+
+Este projeto está sob a licença MIT.
+
+Feito com ❤️ por Arthur A. Carvalho 🚀
