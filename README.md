@@ -1,169 +1,125 @@
-# Secure Stock API 🛡️📦
+# Secure Stock API 📦
 
-![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/spring--boot-%236DB33F.svg?style=for-the-badge&logo=springboot)
-![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql)
-![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=json%20web%20tokens)
 
-> API REST completa para **controle seguro de estoque**, com endpoints para cadastro, edição, listagem e remoção de produtos — implementada com **Java e Spring Boot**.
+API REST desenvolvida com Spring Boot para gerenciamento de estoque, com autenticação e controle de acesso utilizando JWT.
+
+Projeto criado com foco em aprendizado prático de desenvolvimento backend e aplicação de boas práticas em APIs REST.
 
 ---
 
-## 📌 Sumário:
+## Objetivo do Projeto
 
-- [Sobre o Projeto](#-sobre-o-projeto)  
-- [Funcionalidades](#-funcionalidades)  
-- [Tecnologias Utilizadas](#-tecnologias-utilizadas)  
-- [Endpoints Principais](#-endpoints-principais)  
-- [Como Rodar](#-como-rodar)  
-- [Configurações de Banco de Dados](#-configurações-do-banco-de-dados)  
-- [Aprendizados](#-aprendizados)  
-- [Contribuição](#-contribuição)  
-- [Licença](#-licença)
+O objetivo deste projeto foi consolidar conhecimentos em:
+
+- Construção de APIs REST com Spring Boot
+- Organização de projeto em camadas
+- Integração com banco de dados relacional
+- Implementação de autenticação com JWT
+- Proteção de rotas com Spring Security
 
 ---
 
-## 📖 Sobre o Projeto:
+## Tecnologias Utilizadas
 
-Secure Stock API é uma **API RESTful** desenvolvida para gerenciar produtos e controlar estoques de maneira segura e eficiente. Ela foi criada com foco em boas práticas de desenvolvimento backend e pode ser usada como base para projetos profissionais ou portfólio.
-
----
-
-## 🚀 Funcionalidades:
-
-- 🔹 Cadastro de produtos  
-- 🔹 Listagem geral de produtos  
-- 🔹 Busca de produto por ID  
-- 🔹 Atualização de produto existente  
-- 🔹 Remoção de produto  
-- 🔹 Validação de entrada de dados  
-- 🔹 Controle de quantidade em estoque  
-- 🔹 Integração com banco de dados MySQL  
-
----
-
-## 🛠 Tecnologias Utilizadas:
-
-### Backend
-
-- Java  
+- Java 21  
 - Spring Boot  
-- Spring Web MVC  
-- Spring Data JPA
-- Spring Security
-
-### Banco de Dados
-
+- Spring Web  
+- Spring Data JPA  
+- Spring Security  
+- JWT  
 - MySQL  
+- Maven  
 
 ---
 
-## 📍 Endpoints Principais
+## Arquitetura do Projeto
 
-| Método | Endpoint             | Descrição                       |
-|--------|----------------------|---------------------------------|
-| GET    | `/produtos`          | Lista todos os produtos         |
-| GET    | `/produtos/{id}`     | Busca produto por ID            |
-| POST   | `/produtos`          | Cadastra novo produto           |
-| PUT    | `/produtos/{id}`     | Atualiza produto existente      |
-| DELETE | `/produtos/{id}`     | Remove produto                  |
+O projeto segue o padrão em camadas:
 
----
+Controller → Service → Repository → Entity
 
-## ⚙️ Como Rodar:
+- **Controller**: expõe os endpoints
+- **Service**: contém as regras de negócio
+- **Repository**: comunicação com o banco via JPA
+- **Entity**: representação das tabelas no banco
 
-### 📋 Pré-requisitos
-
-Antes de tudo, instale:
-
-- ✔️ Java 21 ou superior  
-- ✔️ MySQL  
-- ✔️ Maven  
-- ✔️ Git  
+Essa separação facilita manutenção, testes e organização do código.
 
 ---
 
-### ▶️ Passo a passo:
+## Segurança
+
+A aplicação utiliza:
+
+- Autenticação com JWT
+- Rotas protegidas com Spring Security
+- Controle de acesso baseado em token
+
+Após autenticação, o usuário recebe um token JWT que deve ser enviado nas requisições protegidas.
+
+---
+
+## Endpoints Principais
+
+### Produtos
+
+| Método | Endpoint      | Descrição        |
+|--------|---------------|------------------|
+| GET    | /products     | Lista produtos   |
+| GET    | /products/{id}| Busca por ID     |
+| POST   | /products     | Cadastra produto |
+| PUT    | /products/{id}| Atualiza produto |
+| DELETE | /products/{id}| Remove produto   |
+
+---
+
+## Como Executar
+
+### Pré-requisitos
+
+- Java 21+
+- MySQL
+- Maven
+- Git
+
+### Passos
 
 ```bash
-# Clone o repositório
 git clone https://github.com/ArthurACarvalho/secure-stock-api.git
-
-# Entre na pasta
 cd secure-stock-api
-
-# Execute a aplicação
 mvn spring-boot:run
 
-A API será iniciada em:
+A aplicação iniciará em:
 
 http://localhost:8080
 ```
-### 🗄️ Configurações do Banco de Dados:
 
-No arquivo application.properties, configure as credenciais do MySQL:
+Configuração do Banco
 
-```bash 
-spring.datasource.url=jdbc:mysql://localhost:3306/seu_banco_de_dados
+No arquivo application.properties:
+
+```bash
+spring.datasource.url=jdbc:mysql://localhost:3306/secure_stock
 spring.datasource.username=seu_usuario
 spring.datasource.password=sua_senha
 spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
 ```
----
 
-### Aprendizados:
+Principais Aprendizados
 
-Com este projeto, você poderá demonstrar:
+Durante o desenvolvimento deste projeto, pratiquei:
 
-Desenvolvimento de APIs REST com Java e Spring Boot
+Estruturação limpa de projetos Spring
 
-Persistência de dados com JPA e MySQL
+Persistência de dados com JPA
 
-Validação de dados no backend
+Tratamento de requisições HTTP
 
-Organização de código limpo
+Implementação de autenticação segura
 
-Uso de Git & GitHub como fluxo de trabalho
+Uso de Git para versionamento
 
-Testes de API com Postman
 
----
+Autor
 
-### Contribuição:
-
-Contribuições são muito bem-vindas!
-
-Se quiser contribuir:
-
-Faça um fork do projeto
-
-Crie uma branch (feature/minha-feature)
-
-Faça commit das suas alterações
-
-Envie um Pull Request
-
----
-
-Sugestões de melhorias:
-
-Novas funcionalidades
-
-Correções de bugs
-
-Melhorias de performance
-
-Melhorias na documentação
-
----
-
-### Licença:
-
-Este projeto está sob a licença MIT.
-
----
-
-Feito por Arthur A. Carvalho.
-
----
+Arthur A. Carvalho
