@@ -94,7 +94,7 @@ A aplicação iniciará em:
 http://localhost:8080
 ```
 
-Configuração do Banco
+### Configuração do Banco
 
 No arquivo application.properties:
 
@@ -105,7 +105,7 @@ spring.datasource.password=sua_senha
 spring.jpa.hibernate.ddl-auto=update
 ```
 
-Principais Aprendizados
+### Principais Aprendizados
 
 Durante o desenvolvimento deste projeto, pratiquei:
 
@@ -120,6 +120,6 @@ Implementação de autenticação segura
 Uso de Git para versionamento
 
 
-Autor
+### Autor
 
-Arthur A. Carvalho
+# Arthur A. Carvalho
