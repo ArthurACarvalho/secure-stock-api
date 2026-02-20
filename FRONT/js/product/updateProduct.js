@@ -1,11 +1,9 @@
-const API_URL = "http://localhost:8080/products";
-
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
 if (!id) {
     alert("ID do produto não informado");
-    window.location.href = "get.html";
+    window.location.href = "/pages/product/list-product.html";
 }
 
 const nome = document.getElementById("nome");
@@ -14,22 +12,18 @@ const quantidade = document.getElementById("quantidade");
 const preco = document.getElementById("preco");
 const btnSalvar = document.getElementById("btnSalvar");
 
-fetch(`${API_URL}/id/${id}`)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Produto não encontrado");
-        }
-        return response.json();
-    })
+apiFetch(`/products/id/${id}`)
+    .then(response => response.json())
     .then(produto => {
         nome.value = produto.nome;
         descricao.value = produto.descricao;
         quantidade.value = produto.quantidade;
         preco.value = produto.preco;
     })
-    .catch(() => {
+    .catch(error => {
+        console.error(error);
         alert("Erro ao carregar produto");
-        window.location.href = "get.html";
+        window.location.href = "/pages/product/list-product.html";
     });
 
 btnSalvar.addEventListener("click", () => {
@@ -45,21 +39,16 @@ btnSalvar.addEventListener("click", () => {
         preco: Number(preco.value)
     };
 
-    fetch(`${API_URL}/${id}`, {
+    apiFetch(`/products/${id}`, {
         method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
         body: JSON.stringify(produtoAtualizado)
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error();
-        }
+    .then(() => {
         alert("Produto atualizado com sucesso!");
-        window.location.href = "get.html";
+        window.location.href = "/pages/product/list-product.html";
     })
-    .catch(() => {
+    .catch(error => {
+        console.error(error);
         alert("Erro ao atualizar produto");
     });
 });

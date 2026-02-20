@@ -1,4 +1,4 @@
-package com.example.demo.Model;
+package com.example.demo.entity.product;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 @Table(name = "TBPRODUTO")
 
-public class ProductModel {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

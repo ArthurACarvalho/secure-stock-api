@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/get.css">
-    <link rel="shortcut icon" href="../faviconCardbox.png" type="image/x-icon">
+    <link rel="icon" href="/assets/favicon/faviconGlass.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/product/list-product.css">
     <title>Lista de produtos</title>
 </head>
 <body>
     <header>
-        <a href="index.html"><input type="button" value="Voltar" id="btn"></a>
+        <a href="../product/actions.html"><input type="button" value="Voltar" id="btn"></a>
         <h1>Produtos em estoque</h1>
     </header>
 
@@ -22,7 +22,8 @@
                     <th>Descrição</th>
                     <th>Quantidade</th>
                     <th>Preço</th>
-                    <th>Ações</th>
+                    <th>Total</th>
+                    <th id="acoes-header">Ações</th>
                 </tr>
             </thead>
             <tbody id="produtotbody">
@@ -34,6 +35,7 @@
     <footer>
     <p>&copy; Arthur Américo Carvalho</p>
   </footer>
-  <script src="../JS/getProduct.js"></script>
+  <script src="/js/api/api.js"></script>
+  <script src="/js/product/listProduct.js"></script>
 </body>
 </html>

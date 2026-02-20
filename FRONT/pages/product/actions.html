@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/assets/favicon/faviconList.ico" type="image/x-icon" />
+  <title>Estoque</title>
+  <link rel="stylesheet" href="/css/product/actions.css" />
+</head>
+
+<body>
+  <header>Controlador de estoque</header>
+
+  <main class="container">
+    <section class="intro">
+      <div class="intro-content">
+        <img src="/assets/images/intro-image.png" class="intro-image">
+        <div class="intro-text">
+          <h2>Bem-vindo ao Sistema de Controle de Estoque.</h2>
+          <p id="p1">
+            Gerencie produtos de forma simples, rápida e segura.
+            Cadastre, edite, visualize e controle seu estoque com eficiência.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards">
+      <div class="card" id="card-cadastro">
+        <h3>Cadastro de produtos</h3>
+        <p>Cadastre novos produtos no sistema com as informações necessárias.</p>
+        <a href="../product/create-product.html" class="card-btn">Cadastrar Produto</a>
+      </div>
+
+      <div class="card">
+        <h3>Listar produtos</h3>
+        <p>Busque, vizualize, edite ou exclua produtos cadastrados de maneira prática e rápida.</p>
+        <a href="../product/list-product.html" class="card-btn">Listar Produto</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Arthur Américo Carvalho</p>
+  </footer>
+  <script src="/js/api/api.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const role = typeof getRole === 'function' ? getRole() : null;
+      if (role !== 'ADMIN' && role !== 'ROLE_ADMIN') {
+        const card = document.getElementById('card-cadastro');
+        if (card) card.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

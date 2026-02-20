@@ -1,6 +1,6 @@
 const btnCadastrar = document.querySelector('input[value="Cadastrar"]');
 
-btnCadastrar.addEventListener('click', () => {
+btnCadastrar.addEventListener('click', async () => {
     const nome = document.getElementById('nome').value;
     const descricao = document.getElementById('descricao').value;
     const quantidade = document.getElementById('quantidade').value;
@@ -18,31 +18,24 @@ btnCadastrar.addEventListener('click', () => {
         preco: Number(preco)
     };
 
-    fetch("http://localhost:8080/products", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(produto)
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Erro ao cadastrar produto");
-        }
-        return response.json();
-    })
-    .then(data => {
+    try {
+        const response = await apiFetch("/products", {
+            method: "POST",
+            body: JSON.stringify(produto)
+        });
+
+        const data = await response.json();
+
         alert("Produto cadastrado com sucesso!");
         console.log("Produto salvo:", data);
 
-        // limpa o formulário
         document.getElementById('nome').value = "";
         document.getElementById('descricao').value = "";
         document.getElementById('quantidade').value = "";
         document.getElementById('preco').value = "";
-    })
-    .catch(error => {
+
+    } catch (error) {
         console.error(error);
         alert("Erro ao cadastrar produto");
-    });
+    }
 });
