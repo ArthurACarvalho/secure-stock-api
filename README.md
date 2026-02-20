@@ -111,6 +111,7 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 ```
 ---
+
 ### Aprendizados:
 
 Com este projeto, você poderá demonstrar:
@@ -126,6 +127,7 @@ Organização de código limpo
 Uso de Git & GitHub como fluxo de trabalho
 
 Testes de API com Postman
+
 ---
 
 ### Contribuição:
@@ -141,6 +143,7 @@ Crie uma branch (feature/minha-feature)
 Faça commit das suas alterações
 
 Envie um Pull Request
+
 ---
 
 Sugestões de melhorias:
@@ -152,12 +155,15 @@ Correções de bugs
 Melhorias de performance
 
 Melhorias na documentação
+
 ---
 
 ### Licença:
 
 Este projeto está sob a licença MIT.
+
 ---
 
 Feito por Arthur A. Carvalho.
+
 ---
