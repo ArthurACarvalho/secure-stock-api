@@ -9,7 +9,7 @@
 
 ---
 
-## 📌 Sumário
+## 📌 Sumário:
 
 - [Sobre o Projeto](#-sobre-o-projeto)  
 - [Funcionalidades](#-funcionalidades)  
@@ -23,13 +23,13 @@
 
 ---
 
-## 📖 Sobre o Projeto
+## 📖 Sobre o Projeto:
 
 Secure Stock API é uma **API RESTful** desenvolvida para gerenciar produtos e controlar estoques de maneira segura e eficiente. Ela foi criada com foco em boas práticas de desenvolvimento backend e pode ser usada como base para projetos profissionais ou portfólio.
 
 ---
 
-## 🚀 Funcionalidades
+## 🚀 Funcionalidades:
 
 - 🔹 Cadastro de produtos  
 - 🔹 Listagem geral de produtos  
@@ -42,7 +42,7 @@ Secure Stock API é uma **API RESTful** desenvolvida para gerenciar produtos e c
 
 ---
 
-## 🛠 Tecnologias Utilizadas
+## 🛠 Tecnologias Utilizadas:
 
 ### Backend
 
@@ -70,7 +70,7 @@ Secure Stock API é uma **API RESTful** desenvolvida para gerenciar produtos e c
 
 ---
 
-## ⚙️ Como Rodar
+## ⚙️ Como Rodar:
 
 ### 📋 Pré-requisitos
 
@@ -83,7 +83,7 @@ Antes de tudo, instale:
 
 ---
 
-### ▶️ Passo a passo
+### ▶️ Passo a passo:
 
 ```bash
 # Clone o repositório
@@ -99,7 +99,7 @@ A API será iniciada em:
 
 http://localhost:8080
 ```
-###🗄️ Configurações do Banco de Dados
+### 🗄️ Configurações do Banco de Dados:
 
 No arquivo application.properties, configure as credenciais do MySQL:
 
@@ -110,7 +110,8 @@ spring.datasource.password=sua_senha
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 ```
-### Aprendizados
+---
+### Aprendizados:
 
 Com este projeto, você poderá demonstrar:
 
@@ -125,8 +126,9 @@ Organização de código limpo
 Uso de Git & GitHub como fluxo de trabalho
 
 Testes de API com Postman
+---
 
-### Contribuição
+### Contribuição:
 
 Contribuições são muito bem-vindas!
 
@@ -139,6 +141,7 @@ Crie uma branch (feature/minha-feature)
 Faça commit das suas alterações
 
 Envie um Pull Request
+---
 
 Sugestões de melhorias:
 
@@ -149,9 +152,12 @@ Correções de bugs
 Melhorias de performance
 
 Melhorias na documentação
+---
 
 ### Licença:
 
 Este projeto está sob a licença MIT.
+---
 
 Feito por Arthur A. Carvalho.
+---
