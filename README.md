@@ -16,7 +16,7 @@
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)  
 - [Endpoints Principais](#-endpoints-principais)  
 - [Como Rodar](#-como-rodar)  
-- [Configurações de Banco de Dados](#-configurações-de-banco-de-dados)  
+- [Configurações de Banco de Dados](#-configurações-do-banco-de-dados)  
 - [Aprendizados](#-aprendizados)  
 - [Contribuição](#-contribuição)  
 - [Licença](#-licença)
@@ -44,23 +44,17 @@ Secure Stock API é uma **API RESTful** desenvolvida para gerenciar produtos e c
 
 ## 🛠 Tecnologias Utilizadas
 
-### 🧠 Backend
+### Backend
 
 - Java  
 - Spring Boot  
 - Spring Web MVC  
-- Spring Data JPA  
+- Spring Data JPA
+- Spring Security
 
-### 💾 Banco de Dados
+### Banco de Dados
 
 - MySQL  
-
-### 📦 Ferramentas
-
-- Maven  
-- Lombok  
-- Postman  
-- Git & GitHub  
 
 ---
 
@@ -104,16 +98,19 @@ mvn spring-boot:run
 A API será iniciada em:
 
 http://localhost:8080
-🗄️ Configurações de Banco de Dados
+```
+###🗄️ Configurações do Banco de Dados
 
 No arquivo application.properties, configure as credenciais do MySQL:
 
+```bash 
 spring.datasource.url=jdbc:mysql://localhost:3306/seu_banco_de_dados
 spring.datasource.username=seu_usuario
 spring.datasource.password=sua_senha
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
-📚 Aprendizados
+```
+### Aprendizados
 
 Com este projeto, você poderá demonstrar:
 
@@ -129,7 +126,7 @@ Uso de Git & GitHub como fluxo de trabalho
 
 Testes de API com Postman
 
-🤝 Contribuição
+### Contribuição
 
 Contribuições são muito bem-vindas!
 
@@ -145,16 +142,16 @@ Envie um Pull Request
 
 Sugestões de melhorias:
 
-✨ Novas funcionalidades
+Novas funcionalidades
 
-🐛 Correções de bugs
+Correções de bugs
 
-📈 Melhorias de performance
+Melhorias de performance
 
-📄 Melhorias na documentação
+Melhorias na documentação
 
-📄 Licença
+### Licença:
 
 Este projeto está sob a licença MIT.
 
-Feito com ❤️ por Arthur A. Carvalho 🚀
+Feito por Arthur A. Carvalho.
